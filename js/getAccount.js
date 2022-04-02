@@ -1,0 +1,10 @@
+web3 = new Web3(
+  new Web3.providers.HttpProvider("https://rpc-mumbai.maticvigil.com/")
+);
+
+async function getAccount() {
+  let accounts = await web3.eth.getAccounts();
+  web3.eth.defaultAccount = accounts[0];
+  console.log(web3.eth.defaultAccount + " account detected");
+  return web3.eth.defaultAccount;
+}
